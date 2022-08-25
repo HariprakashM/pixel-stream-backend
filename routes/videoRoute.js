@@ -23,7 +23,7 @@ const upload = multer({
 video.post('/', checkAuth, upload.single('file'), (req, res, next) => {
   thumbnailGenerator.generateThumbnail(
     // /api/videos is made publically available in App.js
-    'https://pixel-stream.herokuapp.com' + '/api/videos/' + req.file.filename.replace(/ /g, '_'),
+    'http://localhost:5000' + '/api/videos/' + req.file.filename.replace(/ /g, '_'),
     // '*' + '/api/videos/' + req.file.filename.replace(/ /g, '_'),
     req.file.filename.replace(/ /g, '_'),
     req.username);
