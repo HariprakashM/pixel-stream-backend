@@ -29,8 +29,8 @@ const generateThumbnail = (target, title, username) => {
     uploader_name: username,
     upload_title: title,
     video_path: target,
-    // thumbnail_path: 'https://pixel-stream.herokuapp.com' + '/api/videos/video_thumbnails/' + encodeURIComponent(title + '.jpg')
-    thumbnail_path: '*' + '/api/videos/video_thumbnails/' + encodeURIComponent(title + '.jpg')
+    thumbnail_path: 'https://pixel-stream.herokuapp.com' + '/api/videos/video_thumbnails/' + encodeURIComponent(title + '.jpg')
+    // thumbnail_path: '*' + '/api/videos/video_thumbnails/' + encodeURIComponent(title + '.jpg')
     // thumbnail_path: 'http://localhost:5000' + '/api/videos/video_thumbnails/' + encodeURIComponent(title + '.jpg')
   });
   videoDetails
