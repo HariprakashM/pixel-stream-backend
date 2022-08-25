@@ -6,7 +6,8 @@ const thumbnailGenerator = require('../asserts/videothumbnails')
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
-    cb(null, 'media/uploads');
+    // cb(null, 'media/uploads');
+    cb(null, 'https://github.com/HariprakashM/pixel-stream-backend/tree/master/media/uploads');
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname.replace(/ /g, '_'))
