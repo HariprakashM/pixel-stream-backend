@@ -1,5 +1,6 @@
 const userRoute=require('./routes/userRoute');
-const videoRoute=require('./routes/videoRoute');
+
+const newvideoRoute=require('./routes/newvideo');
 
 const express=require('express');
 const app=express();
@@ -14,9 +15,8 @@ app.use(cors({
 }));
 
 app.use('/api/users',userRoute);
-app.use('/api/video',videoRoute);
 
-app.use('/api/videos',express.static('media/uploads'));
+app.use('/api/newvideo',newvideoRoute);
 
 
 app.get("/", (req, res) =>

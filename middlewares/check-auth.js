@@ -6,12 +6,13 @@ const User = require('../models/user');
 
 const authenticate = async function (req, res, next) {
     if (req.headers.authorization) {
+        console.log(req.headers.authorization)
         let verify = jwt.verify(req.headers.authorization, SECRET);
         const temp = await User.findOne({ _id: verify._id })
-        if (verify) {
-            req.userid = verify._id;
-            req.username = temp.name;
-            next()
+        if (temp) {
+            // console.log(verify)
+            // console.log(temp)
+             next()
         } else {
             res.status(401).json({ message: "unauthorized" });
         }
